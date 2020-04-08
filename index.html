@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+
+    <title>Sourdough Calculator</title>
+</head>
+
+<body>
+
+    <h1 class="title">Sourdough Calculator</h1>
+    <div class="card">
+        <section class="scale">
+            <div class="scale-container">
+                <label for="bread-weight">single Bread weight</label>
+                <input type="range" name="bread-weight" id="bread-weight" class="slider slider-weight" data-scale data-bw min="0.5"
+                    max="1.5" value="1" step="0.05">
+                <output class="slider-value" data-slider-pop><span data-slider-pop--char>kg</span></output>
+                <span data-bread-weight></span>
+            </div>
+            <div class="scale-container">
+                <label for="bread-hydratation">bread hydratation</label>
+                <input type="range" name="bread-hydratation" id="bread-hydratation" class="slider slider-hydratation" data-scale data-bh
+                    min="70" max="80" value="75">
+                <output class="slider-value" data-slider-pop><span data-slider-pop--char>%</span></output>
+                <span></span>
+
+            </div>
+            <div class="scale-container">
+                <label for="bread-sour">Inoculation</label>
+                <input type="range" name="bread-sour" id="bread-sour" class="slider slider-inoculation" data-scale data-i min="10"
+                    max="30" value="20">
+                <output class="slider-value" data-slider-pop><span data-slider-pop--char>%</span></output>
+            </div>
+
+        </section>
+        <section class="ingredients">
+            <h2 class="bread-number"><input type="number" value="1" data-bread-number-input class="bread-number-input" min="1" max="66"> bread</h2>
+            <h3 class="ingredients-solo">Flour: <span data-ing--flour></span> g</h3>
+            <h3 class="ingredients-solo">Water: <span data-ing--water></span> g</h3>
+            <h3 class="ingredients-solo">Starter: <span data-ing--starter></span> g</h3>
+            <h3 class="ingredients-solo">Salt: <span data-ing--salt></span> g</h3>
+        </section>
+    </div>  
+
+</body>
+
+</html>
