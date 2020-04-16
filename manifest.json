@@ -6,7 +6,7 @@
 	"display": "standalone",
 	"orientation": "portrait",
 	"scope": "/",
-	"start_url": "/sourdough/index.html",
+	"start_url": "index.html",
 	"icons": [
 		{
 			"src": "images/icons/icon-72x72.png",
