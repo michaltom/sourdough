@@ -1,3 +1,12 @@
+if ('serviceWorker' in navigator) {
+	navigator.serviceWorker
+		.register('./sw.js')
+		.then((registration) => {
+			console.log(registration);
+		})
+		.catch((error) => console.error(error));
+}
+
 const sliderPops = document.querySelectorAll('.scale-container');
 const ingFlour = document.querySelector('[data-ing--flour]');
 const ingWater = document.querySelector('[data-ing--water]');
@@ -22,6 +31,12 @@ sliderPops.forEach((pop) => {
 	setup();
 });
 
+breadNumber.oninput = (e) => {
+	console.log(e.data);
+	if (e.data === undefined) return;
+	e.data == e.data.match(/[1-9]/) ? (breadNumber.value = e.data) : (breadNumber.value = 1);
+	setup();
+};
 breadNumber.addEventListener('change', () => {
 	setup();
 });
@@ -29,7 +44,6 @@ breadNumber.addEventListener('change', () => {
 function setPop(scale, pop, char) {
 	const popChar = char.innerHTML;
 	const val = scale.value;
-	console.log(val);
 	const min = scale.min;
 	const max = scale.max;
 	const newVal = Number((val - min) * 100 / (max - min));
@@ -47,15 +61,13 @@ function flourCalc(bw, bh, i, out, bn) {
 }
 
 function ingCalc(fl, bh, out) {
-	console.log('flour : ' + bh.value);
-	out.innerHTML = Math.round(fl.innerHTML * (bh.value * 0.01)) ;
+	out.innerHTML = Math.round(fl.innerHTML * (bh.value * 0.01));
 }
-
-console.log(breadNumber.value);
 
 function setup() {
 	flourCalc(scaleBreadWeight, scaleBreadhydratatin, scaleBreadInoculation, ingFlour, breadNumber);
 	ingCalc(ingFlour, scaleBreadhydratatin, ingWater);
-	ingCalc(ingFlour, scaleBreadInoculation, ingStarter );
+	ingCalc(ingFlour, scaleBreadInoculation, ingStarter);
 	ingCalc(ingFlour, salt, ingSalt);
+	// ingSalt.innerHTML = scaleBreadWeight.value * 10;
 }

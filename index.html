@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json">
     <link href="https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
@@ -40,7 +41,8 @@
 
         </section>
         <section class="ingredients">
-            <h2 class="bread-number"><input type="number" value="1" data-bread-number-input class="bread-number-input" min="1" max="66"> bread</h2>
+            <h2 class="bread-number"><input type="number" value="1" data-bread-number-input class="bread-number-input" min="1" max="9"  required> bread</h2> 
+            <!-- oninput="this.value=this.value.replace(/[^0-9]/g,'');" -->
             <h3 class="ingredients-solo">Flour: <span data-ing--flour></span> g</h3>
             <h3 class="ingredients-solo">Water: <span data-ing--water></span> g</h3>
             <h3 class="ingredients-solo">Starter: <span data-ing--starter></span> g</h3>
