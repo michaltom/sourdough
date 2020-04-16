@@ -1,4 +1,4 @@
-const assets = [ '/', '/index.html', '/style.css', '/main.js' ];
+const assets = [ '/sourdough', '/sourdough/index.html', '/sourdough/style.css', '/sourdough/main.js' ];
 self.addEventListener('install', (event) => {
 	event.waitUntil(
 		caches.open('sourdough-app-shell').then((cache) => {
